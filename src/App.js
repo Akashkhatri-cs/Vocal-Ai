@@ -20,7 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-        <Route path="/expanded-result/:resultId" element={<ExpandedResult />} />
+        <Route path="/expanded-result/:resultId" element={<PrivateRoute><ExpandedResult /></PrivateRoute>} />
       </Routes>
     </div>
   );
