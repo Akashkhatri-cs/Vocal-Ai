@@ -12,16 +12,15 @@ function Login() {
   const navigate = useNavigate();
   const loginUrl = `${config.baseUrl}/login`;
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     try {
-      console.log('current environment: ',config)
-      const response = await axios.post(loginUrl/*'http://localhost:5000/login'*/, { email, password });
+      console.log('current environment: ', config);
+      const response = await axios.post(loginUrl, { email, password });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user_id', response.data.user_id);
-      localStorage.setItem('name',response.data.name);
+      localStorage.setItem('name', response.data.name);
       navigate('/');
     } catch (error) {
       console.error('Login failed', error);
