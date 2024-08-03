@@ -37,7 +37,7 @@ const ExpandedResult = () => {
     };
 
     fetchAudio();
-  }, [resultId]);
+  }, [resultId, audioURL, resultURL]);
 
   const handleTimeUpdate = () => {
     setCurrentTime(audioRef.current.currentTime);
@@ -47,32 +47,32 @@ const ExpandedResult = () => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const suggestions = [
-    {
-      offset: 497,
-      length: 3,
-      message: "Possible spelling mistake found.",
-      replacement: "SMA"
-    },
-    {
-      offset: 522,
-      length: 3,
-      message: "Possible spelling mistake found.",
-      replacement: "SMA"
-    },
-    {
-      offset: 889,
-      length: 4,
-      message: "Use a comma before ‘and’ if it connects two independent clauses (unless they are closely connected and short).",
-      replacement: ", and"
-    },
-    {
-      offset: 1478,
-      length: 2,
-      message: "A word may be missing after ‘a’.",
-      replacement: ""
-    }
-  ];
+  // const suggestions = [
+  //   {
+  //     offset: 497,
+  //     length: 3,
+  //     message: "Possible spelling mistake found.",
+  //     replacement: "SMA"
+  //   },
+  //   {
+  //     offset: 522,
+  //     length: 3,
+  //     message: "Possible spelling mistake found.",
+  //     replacement: "SMA"
+  //   },
+  //   {
+  //     offset: 889,
+  //     length: 4,
+  //     message: "Use a comma before ‘and’ if it connects two independent clauses (unless they are closely connected and short).",
+  //     replacement: ", and"
+  //   },
+  //   {
+  //     offset: 1478,
+  //     length: 2,
+  //     message: "A word may be missing after ‘a’.",
+  //     replacement: ""
+  //   }
+  // ];
 
   const getFeedbackMessage = (percentageString) => {
     const percentage = parseFloat(percentageString.replace('%', ''));
